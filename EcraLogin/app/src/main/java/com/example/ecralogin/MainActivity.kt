@@ -1,5 +1,6 @@
 package com.example.ecralogin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -18,13 +19,20 @@ class MainActivity : AppCompatActivity() {
             val userName = binding.editUsername.text.toString().trim()
             val password = binding.editPassword.text.toString().trim()
             if (!userName.isEmpty() || !password.isEmpty()) {
-                if(userName.equals("teste") && password.equals("teste")) {
+                if (userName.equals("teste") && password.equals("teste")) {
                     Toast.makeText(applicationContext, "Login ok", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, LoginOkActivity::class.java))
                 } else {
-                    Toast.makeText(applicationContext, "Login ou senha incorreto", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Login ou senha incorreto",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    startActivity(Intent(this, LoginErradoActivity::class.java))
                 }
-            } else{
-                Toast.makeText(applicationContext, "Os campos são obrigatorios", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(applicationContext, "Os campos são obrigatorios", Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }
