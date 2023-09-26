@@ -15,7 +15,7 @@
         android:gravity="center"
         android:hint="entre com seu nome"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_converte"
+        app:layout_constraintBottom_toTopOf="@+id/button_enviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -19,7 +19,18 @@ class MainActivity2 : AppCompatActivity() {
         if(name.equals("") || name == null) {
             Toast.makeText(applicationContext, "Nome não inserido", Toast.LENGTH_LONG).show()
         } else {
-            binding.textOla.setText("Olá ${name}")
+            binding.editSobrenome.setText(name)
+        }
+
+        binding.buttonEnviar.setOnClickListener {
+            i.putExtra("name", binding.editSobrenome.text.toString())
+            setResult(1, i);
+            finish()
+        }
+
+        binding.buttonCancelar.setOnClickListener {
+            setResult(2, i)
+            finish();
         }
     }
 }
